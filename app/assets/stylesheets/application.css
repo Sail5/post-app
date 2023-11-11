@@ -43,6 +43,14 @@ body {
     text-align: center;
   }
   
+  .post-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+
+
   .form-container {
     display: flex;
     flex-direction: column;
@@ -92,8 +100,14 @@ body {
     margin-left: 10px;
     border: 1px solid #000; /* 外枠の色を黒に設定 */
     cursor: pointer;
-}
+  }
   
+  .current-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+
   .edit-delete-wrapper {
     display: flex;
     margin-top: 10px;
