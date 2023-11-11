@@ -1,3 +1,4 @@
+
 require_relative "boot"
 
 require "rails/all"
@@ -23,9 +24,8 @@ module App2
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # 時間を日本に合わせる
+    config.time_zone = 'Asia/Tokyo'
   end
 end
-
-
-#時間を日本に合わせる
-config.time_zone = 'Asia/Tokyo'
