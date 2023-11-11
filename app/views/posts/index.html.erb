@@ -1,4 +1,4 @@
-<h1>Hello Ruby</h1>
+<h1>SNSea</h1>
 
 
 <div class="button-container">
@@ -6,15 +6,19 @@
 </div>
 
 
-
-
 <ul>
     <% @posts.each do |post| %>
     <li>
         <span>
-            <small><%= post.created_at %></small>
+            <small><%= post.created_at.in_time_zone('Asia/Tokyo').strftime('%Y-%m-%d %H:%M') %></small>
         </span>
         <h2><%= post.title %></h2>
+        <% if post.image.attached? %>
+            <div class="post-image">
+                <%= link_to image_tag(post.image, class: "img-thumbnail"), image_post_path(post), target: "_blank" %>
+            </div>
+        <% end %>
+
         <p><%= post.content %></p>
         <div class="edit-delete-wrapper">
             <%= link_to "edit" , edit_post_path(post), class: "link-edit-delete-button" %>

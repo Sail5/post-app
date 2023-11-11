@@ -1,13 +1,26 @@
 <h1>EDIT</h1>
 
-<%= form_with model: @post, html: { class: "form-container" } do |form| %>
-<div class="form-input">
+<%= form_with model: @post, html: { class: "form-container", enctype: "multipart/form-data" } do |form| %>
+  <div class="form-input">
     <%= form.label :title %> <%= form.text_field :title %>
-</div>
-<div class="form-input">
+  </div>
+  <div class="form-input">
     <%= form.label :content %> <%= form.text_area :content %>
-</div>
-<div class="button-container">
-    <%= form.submit "UPDATE", class: "link-button" %>
-</div>
+  </div>
+  
+    <% if @post.image.attached? %>
+        <div class="form-input">
+            <%= form.label :image, "Current Image" %>
+            <%= image_tag @post.image, class: "current-image" %>
+        </div>
+    <% end %>
+
+  <div class="form-input">
+    <%= form.label :new_image, "New Image" %>
+    <%= form.file_field :new_image %>
+  </div>
+
+  <div class="button-container">
+    <%= form.submit "Update Post", class: "link-button" %>
+  </div>
 <% end %>
