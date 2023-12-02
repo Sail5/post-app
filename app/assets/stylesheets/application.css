@@ -112,3 +112,21 @@ body {
     display: flex;
     margin-top: 10px;
   }
+
+  .container{
+    text-align: center;
+  }
+ 
+  .field{
+    margin: 20px 0 20px;
+  }
+ 
+  input{
+    width: 400px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 3px;
+    border: 2px solid #ddd;
+  }
+
+

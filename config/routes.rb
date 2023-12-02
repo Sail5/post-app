@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
+  root 'homes#top'
+  resource :user, only: [:new, :create, :show]
+  get 'login', to: "sessions#new"
+  post 'login', to: "sessions#create"
+  delete 'logout', to: "sessions#destroy"  
+  get 'logout', to: "sessions#destroy"
   resources :posts, only: [:index, :new, :create, :edit, :update, :destroy]
   resources :posts do
     member do
