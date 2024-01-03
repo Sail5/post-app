@@ -5,10 +5,19 @@
     <%= link_to "new post" , new_post_path, class: "link-button" %>
 </div>
 
+<%= link_to "Logout", logout_path, method: :delete %>
+
+<div class="user-info">
+  <% if @user %>
+    <p>Welcome, <%= @user.name %></p>
+    <%= debug @user %>
+  <% end %>
+</div>
 
 <ul>
     <% @posts.each do |post| %>
     <li>
+        <p>投稿者: <%= post.user_name %></p>
         <span>
             <small><%= post.created_at.in_time_zone('Asia/Tokyo').strftime('%Y-%m-%d %H:%M') %></small>
         </span>
