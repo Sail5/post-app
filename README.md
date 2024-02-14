@@ -1,7 +1,6 @@
-# README
+# 写真投稿アプリ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ユーザーごとにアカウントを作成し、写真と文章を投稿できる簡易的なSNS
 
 Things you may want to cover:
 
