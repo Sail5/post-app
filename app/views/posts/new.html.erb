@@ -1,6 +1,7 @@
 <h1>NEW POST</h1>
 
 <%= form_with model: @post, html: { class: "form-container", enctype: "multipart/form-data" } do |form| %>
+
 <div class="form-input">
     <%= form.label :title %> <%= form.text_field :title %>
 </div>
